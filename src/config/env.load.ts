@@ -2,7 +2,6 @@ interface ConfigProps {
   api: {
     port: number;
     prefix: string;
-    baseUrl: string;
   };
   db: {
     connection: string;
@@ -22,7 +21,6 @@ const env: any = process.env;
 
 export const envConfig: ConfigProps = {
   api: {
-    baseUrl: env.API_BASE_URL || 'http://localhost',
     port: parseInt(env.SERVER_PORT, 10) || 3000,
     prefix: env.API_PREFIX || 'api/v1',
   },
